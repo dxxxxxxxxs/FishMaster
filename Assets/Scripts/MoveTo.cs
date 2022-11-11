@@ -1,0 +1,16 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MoveTo : MonoBehaviour
+{
+    private GameObject goldCollect;
+    void Start()
+    {
+        goldCollect = GameObject.Find("GoldCollect");
+    }
+    void Update()
+    {
+        transform.position = Vector3.MoveTowards(transform.position,goldCollect.transform.position,5*Time.deltaTime);
+    }
+}
